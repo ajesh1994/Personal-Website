@@ -8,10 +8,9 @@
         <div class="previewTitle">{{this.title}}</div>
         <p class="previewDescription">{{this.description}}</p>
         <p />
-
-        <small>
+        <!-- <small>
           <g-link class="readMore" :to="this.path">Read More</g-link>
-        </small>
+        </small>-->
         <div class="previewDate">
           <small class="previewDate">{{this.date}}</small>
         </div>
@@ -21,7 +20,6 @@
 </template>
 
 <script>
-import marked from "marked";
 export default {
   props: {
     path: String,
