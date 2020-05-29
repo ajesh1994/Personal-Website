@@ -62,7 +62,9 @@ export default {
 
 <style scoped>
 .pager {
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
 }
 
 .pager > a {
