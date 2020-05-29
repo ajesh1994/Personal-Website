@@ -62,6 +62,7 @@ export default {
   margin-top: 0.5rem;
   margin-bottom: 1.5rem;
   font-family: OverpassBold;
+  display: inline-block;
 }
 
 .previewTitle:hover {
