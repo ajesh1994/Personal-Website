@@ -58,7 +58,6 @@ export default {
   font-size: 1.5rem;
   margin-top: 0.5rem;
   margin-bottom: 1.5rem;
-  line-height: 1rem;
   font-family: OverpassBold;
 }
 .previewImage {
@@ -71,10 +70,11 @@ export default {
 
 .previewDate {
   text-align: right;
+  margin-top: 10px;
 }
 .previewInfo {
   flex: 75%;
-  padding: 20px 0;
+  padding: 20px 0 0;
   font-family: Overpass;
 }
 

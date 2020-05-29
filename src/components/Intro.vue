@@ -1,7 +1,7 @@
 <template>
   <div class="intro">
-    <div class="introText" v-html="markdown" />
-    <div data-aos-anchor-placement="center-center" class="subHeadingUnderline" />
+    <div class="introText" data-aos="fade-down" v-html="markdown" />
+    <div class="subHeadingUnderline" />
   </div>
 </template>
 
