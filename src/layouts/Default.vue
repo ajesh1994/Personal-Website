@@ -2,7 +2,7 @@
   <div class="layout">
     <div class="container">
       <div class="header">
-        <Articles />
+        <HeroBanner />
         <NavBar />
       </div>
       <slot />

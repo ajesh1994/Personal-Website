@@ -6,7 +6,7 @@ import DefaultLayout from '~/layouts/Default.vue';
 import NavBar from '~/components/NavBar.vue';
 import FootBar from '~/components/FootBar.vue';
 import ArticlePreview from '~/components/ArticlePreview.vue';
-import Articles from '~/components/Articles.vue';
+import HeroBanner from '~/components/HeroBanner.vue';
 //import SimpleIcon from '~/components/SimpleIcon.vue'
 import Fluid from '~/components/Fluid.vue';
 import Icon from 'vue-awesome/components/Icon';
@@ -59,7 +59,7 @@ export default function(Vue, context) {
   Vue.component('NavBar', NavBar);
   Vue.component('FootBar', FootBar);
   Vue.component('ArticlePreview', ArticlePreview);
-  Vue.component('Articles', Articles);
+  Vue.component('HeroBanner', HeroBanner);
   //Vue.component('SimpleIcon', SimpleIcon)
   Vue.component('v-icon', Icon);
   Vue.component('Fluid', Fluid);
