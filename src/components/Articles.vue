@@ -109,7 +109,7 @@ export default {
   justify-content: center;
 }
 .imageWrapper {
-  height: 50%;
+  height: 45%;
   order: 1;
 }
 .headerWrapper {
