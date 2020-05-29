@@ -1,30 +1,33 @@
 // import { Field, Control, Icon, Help } from 'buefy'
-import Buefy from 'buefy'
-import '~/assets/index.scss'
-
-import DefaultLayout from '~/layouts/Default.vue'
-import NavBar from '~/components/NavBar.vue'
-import FootBar from '~/components/FootBar.vue'
-import ArticlePreview from '~/components/ArticlePreview.vue'
-import Articles from '~/components/Articles.vue'
+import Buefy from 'buefy';
+import '~/assets/index.scss';
+import VueGtag from 'vue-gtag';
+import DefaultLayout from '~/layouts/Default.vue';
+import NavBar from '~/components/NavBar.vue';
+import FootBar from '~/components/FootBar.vue';
+import ArticlePreview from '~/components/ArticlePreview.vue';
+import Articles from '~/components/Articles.vue';
 //import SimpleIcon from '~/components/SimpleIcon.vue'
-import Fluid from '~/components/Fluid.vue'
-import Icon from 'vue-awesome/components/Icon'
+import Fluid from '~/components/Fluid.vue';
+import Icon from 'vue-awesome/components/Icon';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import 'vue-material-design-icons/styles.css';
 
-const isProd = process.env.NODE_ENV === 'production'
-export default function (Vue, context) {
-  const { head, isClient } = context
+const isProd = process.env.NODE_ENV === 'production';
+export default function(Vue, context) {
+  const { head, isClient } = context;
   // Add Web App manifest
-  if(isProd) {
+  if (isProd) {
     head.link.push({
       rel: 'manifest',
-      href: '/manifest.json'
-    })
+      href: '/manifest.json',
+    });
   }
   head.meta.push({
     name: 'theme-color',
-    content: '#18453B' //MSU Green
-  })
+    content: '#18453B', //MSU Green
+  });
   //todo:fix so this won't run in dev mode
   /*if(isClient) {
     console.log('registering worker from main.js')
@@ -32,17 +35,26 @@ export default function (Vue, context) {
   }*/
   if (isClient && isProd && 'serviceWorker' in navigator) {
     window.addEventListener('load', () => {
-      navigator.serviceWorker.register('/sw.js').then(registration => {
-        console.log('SW registered: ', registration);
-      }).catch(registrationError => {
-        console.log('SW registration failed: ', registrationError);
-      });
+      navigator.serviceWorker
+        .register('/sw.js')
+        .then((registration) => {
+          console.log('SW registered: ', registration);
+        })
+        .catch((registrationError) => {
+          console.log('SW registration failed: ', registrationError);
+        });
     });
   }
 
-  console.log('main.js - context')
-  console.log(context)
-  Vue.use(Buefy)
+  AOS.init({
+    startEvent: 'load', // name of the event dispatched on the document, that AOS should initialize on
+    mirror: true,
+    once: true,
+  });
+  Vue.use(Buefy);
+  Vue.use(VueGtag, {
+    config: { id: 'UA-167966285-1' },
+  });
   /*
   Vue.component('Field', Field)
   Vue.component('Control', Control)
@@ -50,12 +62,12 @@ export default function (Vue, context) {
   Vue.component('Help', Help)
   */
   //
-  Vue.component('Layout', DefaultLayout)
-  Vue.component('NavBar', NavBar)
-  Vue.component('FootBar', FootBar)
-  Vue.component('ArticlePreview', ArticlePreview)
-  Vue.component('Articles', Articles)
+  Vue.component('Layout', DefaultLayout);
+  Vue.component('NavBar', NavBar);
+  Vue.component('FootBar', FootBar);
+  Vue.component('ArticlePreview', ArticlePreview);
+  Vue.component('Articles', Articles);
   //Vue.component('SimpleIcon', SimpleIcon)
-  Vue.component('v-icon', Icon)
-  Vue.component('Fluid', Fluid)
+  Vue.component('v-icon', Icon);
+  Vue.component('Fluid', Fluid);
 }

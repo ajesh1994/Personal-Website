@@ -1,3 +1,20 @@
+@font-face {
+  font-family: OverpassHeavy;
+  src: url('../assets/overpass-desktop-fonts/overpass/overpass-heavy.otf');
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: OverpassBold;
+  src: url('../assets/overpass-desktop-fonts/overpass/overpass-bold.otf');
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: Overpass;
+  src: url('../assets/overpass-desktop-fonts/overpass/overpass-regular.otf');
+  font-weight: normal;
+}
 h1 {
   text-rendering: optimizeLegibility;
   font-size: 2rem;
@@ -12,12 +29,12 @@ h2 {
   font-weight: bold;
   line-height: 1;
   margin-top: 2rem;
-  margin-bottom: 1.6rem;  
+  margin-bottom: 1.6rem;
 }
 
 h3 {
   font-size: 1rem;
   font-weight: bold;
   margin-top: 2rem;
-  margin-bottom: 1.2rem;  
+  margin-bottom: 1.2rem;
 }

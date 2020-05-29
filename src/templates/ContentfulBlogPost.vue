@@ -1,20 +1,22 @@
 <template>
-  <Layout>
-    <article>
-      <div class="hero">
-        <div class="heroImage">
-          <Fluid alt :src="$page.post.heroImage.file.url.src" :width="1920"/>
-        </div>
+  <article>
+    <div class="hero">
+      <div class="heroImage">
+        <Fluid alt :src="$page.post.heroImage.file.url.src" :width="1920" />
       </div>
-      <div class="section">
-        <div>
-          <h1>{{$page.post.title}}</h1>
-          <p style="display: block">{{$page.post.publishDate}}</p>
-        </div>
-        <div v-html="markdown"/>
+    </div>
+    <div class="homePage">
+      <a href="/blog">Back</a>
+    </div>
+    <div class="section">
+      <div>
+        <h1>{{$page.post.title}}</h1>
+        <p style="display: block">{{$page.post.publishDate}}</p>
       </div>
-    </article>
-  </Layout>
+      <div v-html="markdown" />
+    </div>
+    <FootBar />
+  </article>
 </template>
 
 <page-query>
@@ -37,8 +39,6 @@ query BlogPostByPath($path: String!) {
 import marked from "marked";
 export default {
   name: "Contentful",
-  // props: [''],
-  // components: {},
   data() {
     return {
       markdown: ""
@@ -50,9 +50,10 @@ export default {
       meta: [{ name: "description", content: this.$page.post.description }]
     };
   },
-  mounted: function() {
-    console.log("BlogPost.vue");
-    console.log(this);
+  mounted() {
+    this.$gtag.pageview({
+      page_path: window.location.pathname
+    });
 
     this.markdown = marked(this.$page.post.body);
   }
@@ -67,4 +68,12 @@ article ul li {
   margin-bottom: 1rem;
 }
 
+.homePage {
+  padding: 24px 24px 0;
+}
+
+.homePage > a {
+  color: #7510f7;
+  font-size: 20px;
+}
 </style>

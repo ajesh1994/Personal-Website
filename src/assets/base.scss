@@ -1,10 +1,11 @@
 .container {
-  max-width: 1200px !important;
+  width: 100%;
+  max-width: none;
 }
 
 .fa-icon {
-  margin-left: .25em;
-  margin-right: .25em;
+  margin-left: 0.25em;
+  margin-right: 0.25em;
 }
 .simpleicon svg {
   height: 1.5em;
@@ -22,21 +23,16 @@ p {
   margin-bottom: 1rem;
 }
 .section {
-  padding: 1.5rem
+  padding: 1.5rem;
 }
 main .section {
-  padding: 0rem 1.5rem
+  padding: 0rem 1.5rem;
 }
 main .section:first-child {
-  padding: 2rem 1.5rem
+  padding: 2rem 1.5rem;
 }
 main .section:last-child {
-  padding: 0rem 1.5rem 2rem 1.5rem
-}
-
-.footer {
-  border-top: 1px solid #ddd;
-  padding-bottom: 3rem;
+  padding: 0rem 1.5rem 2rem 1.5rem;
 }
 
 .article-list {
