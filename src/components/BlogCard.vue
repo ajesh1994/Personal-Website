@@ -1,11 +1,13 @@
 <template>
   <div class="cardMargin">
-    <g-link class="blogCardWrapper" :to="this.path">
+    <div class="blogCardWrapper" :to="this.path">
       <div class="previewImage">
         <Fluid :alt="this.title" :src="this.image.file.url.src" />
       </div>
       <div class="previewInfo">
-        <div class="previewTitle">{{this.title}}</div>
+        <g-link :to="this.path">
+          <div class="previewTitle">{{this.title}}</div>
+        </g-link>
         <p class="previewDescription">{{this.description}}</p>
         <p />
         <small>
@@ -15,7 +17,7 @@
           <small class="previewDate">{{this.date}}</small>
         </div>
       </div>
-    </g-link>
+    </div>
   </div>
 </template>
 
