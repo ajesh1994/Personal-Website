@@ -10,9 +10,7 @@ import Articles from '~/components/Articles.vue';
 //import SimpleIcon from '~/components/SimpleIcon.vue'
 import Fluid from '~/components/Fluid.vue';
 import Icon from 'vue-awesome/components/Icon';
-import AOS from 'aos';
 import 'aos/dist/aos.css';
-import 'vue-material-design-icons/styles.css';
 
 const isProd = process.env.NODE_ENV === 'production';
 export default function(Vue, context) {
@@ -46,11 +44,6 @@ export default function(Vue, context) {
     });
   }
 
-  AOS.init({
-    startEvent: 'load', // name of the event dispatched on the document, that AOS should initialize on
-    mirror: true,
-    once: true,
-  });
   Vue.use(Buefy);
   Vue.use(VueGtag, {
     config: { id: 'UA-167966285-1' },

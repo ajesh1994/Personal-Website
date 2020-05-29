@@ -63,7 +63,7 @@ module.exports = {
 
     if (isServer) {
       config.externals([
-        nodeExternals({ whitelist: [/^vue-awesome/, /^buefy/] }),
+        nodeExternals({ whitelist: [/^vue-awesome/, /^buefy/, /^aos/] }),
       ]);
       /*      
       const {InjectManifest} = require('workbox-webpack-plugin');

@@ -50,11 +50,12 @@ export default {
       showNavbar: true,
       lastScrollPosition: 0,
       navPostion: null,
-      homePage: window.location.pathname === "/"
+      homePage: true
     };
   },
   mounted() {
-    console.log(this.homePage);
+    this.homePage = window.location.pathname === "/";
+
     this.navPostion = window.visualViewport.height;
     //    document.onreadystatechange = () => {
     //   if (document.readyState == "complete") {
