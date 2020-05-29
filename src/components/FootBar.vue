@@ -8,19 +8,19 @@
       </p>
       <div class="socialMediaWrapper">
         <a class="linkTags" href="mailto: ajeshjally@gmail.com">
-          <Email class="icon" />
+          <v-icon class="icon" name="regular/envelope" />
         </a>
 
         <a class="linkTags" href="https://github.com/ajesh1994/">
-          <Github class="icon" />
+          <v-icon class="icon" name="brands/github" />
         </a>
 
         <a class="linkTags" href="https://www.linkedin.com/in/ajesh-jally-61a914a7">
-          <Linkedin class="icon" />
+          <v-icon class="icon" name="brands/linkedin" />
         </a>
 
         <a class="linkTags" href="https://www.instagram.com/ajeshjally/">
-          <Instagram class="icon" />
+          <v-icon class="icon" name="brands/instagram" />
         </a>
       </div>
       <div class="copyright">
@@ -41,10 +41,10 @@ import "vue-awesome/icons/heart";
 import "vue-awesome/icons/copyright";
 import "vue-awesome/icons/chevron-up";
 
-import Email from "vue-material-design-icons/Email.vue";
-import Github from "vue-material-design-icons/Github.vue";
-import Linkedin from "vue-material-design-icons/Linkedin.vue";
-import Instagram from "vue-material-design-icons/Instagram.vue";
+import "vue-awesome/icons/regular/envelope";
+import "vue-awesome/icons/brands/github";
+import "vue-awesome/icons/brands/linkedin";
+import "vue-awesome/icons/brands/instagram";
 export default {
   name: "FootBar",
   props: [],
@@ -55,12 +55,6 @@ export default {
     };
   },
   mounted() {},
-  components: {
-    Email,
-    Github,
-    Linkedin,
-    Instagram
-  },
   methods: {
     scrollToSection() {
       window.scroll({
@@ -111,21 +105,15 @@ export default {
   padding: 10px;
 }
 
-.linkTags:hover .material-design-icon > .material-design-icon__svg {
+.linkTags:hover > svg {
   fill: #7510f7;
 }
-.material-design-icon > .material-design-icon__svg {
+a > svg {
   fill: white;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
+  margin: auto;
 }
 .linkTags:hover {
   background: white;
-}
-.material-design-icon__svg:hover {
-  fill: skyblue;
 }
 
 .scroll {
@@ -165,6 +153,6 @@ export default {
   border-radius: 4px;
   animation: fadeInUp 1.2s linear infinite;
   position: absolute;
-  left: 46px;
+  left: 50px;
 }
 </style>
