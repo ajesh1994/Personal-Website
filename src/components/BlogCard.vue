@@ -1,9 +1,9 @@
 <template>
   <div class="cardMargin">
     <div class="blogCardWrapper" :to="this.path">
-      <div class="previewImage">
+      <g-link class="previewImage" :to="this.path">
         <Fluid :alt="this.title" :src="this.image.file.url.src" />
-      </div>
+      </g-link>
       <div class="previewInfo">
         <g-link :to="this.path">
           <div class="previewTitle">{{this.title}}</div>
@@ -48,6 +48,9 @@ export default {
   font-weight: bold;
 }
 
+.readMore:hover {
+  text-decoration: underline;
+}
 .previewDescription {
   margin-bottom: 30px;
 }
@@ -59,6 +62,10 @@ export default {
   margin-top: 0.5rem;
   margin-bottom: 1.5rem;
   font-family: OverpassBold;
+}
+
+.previewTitle:hover {
+  text-decoration: underline;
 }
 .previewImage {
   max-height: 200px;
